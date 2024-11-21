@@ -9,15 +9,21 @@ console.log(fizzArray2(10));
 
 
 
-function mirrorEnds(str){
-    let start = 0;
-    let end = str.length - 1;
-
-    while (start <= end && str[start] === str[end]) {
-        start++;
-        end--;
+function mirrorEnds(str) {
+    let mirror = "";
+    let length = str.length;
+    
+    for (let i = 0; i < length; i++) {
+        if (str[i] === str[length - 1 - i]) {
+            mirror += str[i];
+        } else {
+            break;
+        }
     }
-    return str.slice(0, start);
+    
+    return mirror;
 }
+
+
 
 
